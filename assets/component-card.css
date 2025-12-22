@@ -593,10 +593,6 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
-.product-card__image-container {
-  position: relative;
-  overflow: hidden;
-}
 
 .product-card__add-to-cart {
   position: absolute;
@@ -604,10 +600,16 @@
   left: 50%;
   transform: translateX(-50%);
   opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 2;
+  width: calc(100% - 2rem);
 }
 
-.product-card-wrapper:hover .product-card__add-to-cart {
+.card-wrapper:hover .product-card__add-to-cart {
   opacity: 1;
+  transform: translateX(-50%) translateY(-0.5rem);
+}
+
+.product-card__add-to-cart .button {
+  width: 100%;
 }

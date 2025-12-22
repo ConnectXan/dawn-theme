@@ -59,12 +59,11 @@
       >
         {%- if card_product.featured_media -%}
           <div class="card__media{% if image_shape and image_shape != 'default' %} shape--{{ image_shape }} color-{{ settings.card_color_scheme }} gradient{% endif %}">
-            <div class="product-card__image-container">
-              <div class="media media--transparent media--hover-effect">
-                {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-                <img
-                  srcset="
-                    {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
+            <div class="media media--transparent media--hover-effect">
+              {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+              <img
+                srcset="
+                  {%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
                   {%- if card_product.featured_media.width >= 360 -%}{{ card_product.featured_media | image_url: width: 360 }} 360w,{%- endif -%}
                   {%- if card_product.featured_media.width >= 533 -%}{{ card_product.featured_media | image_url: width: 533 }} 533w,{%- endif -%}
                   {%- if card_product.featured_media.width >= 720 -%}{{ card_product.featured_media | image_url: width: 720 }} 720w,{%- endif -%}
@@ -104,15 +103,6 @@
                   height="{{ card_product.media[1].height }}"
                 >
               {%- endif -%}
-              </div>
-              <div class="product-card__add-to-cart">
-                <product-form>
-                  {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
-                    <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="product-variant-id" disabled>
-                    <button type="submit" class="button button--primary">Add to Cart</button>
-                  {%- endform -%}
-                </product-form>
-              </div>
             </div>
           </div>
         {%- endif -%}
@@ -559,6 +549,14 @@
           {% endif %}
         {% endif %}
         <div class="card__badge {{ settings.badge_position }}">
+          <div class="product-card__add-to-cart">
+            <product-form>
+              {%- form 'product', card_product, id: product_form_id, class: 'form', novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+                <input type="hidden" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="product-variant-id" disabled>
+                <button type="submit" class="button button--primary">Add to Cart</button>
+              {%- endform -%}
+            </product-form>
+          </div>
           {%- if card_product.available == false -%}
             <span
               id="Badge-{{ section_id }}-{{ card_product.id }}"
