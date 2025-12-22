@@ -79,7 +79,7 @@
 .page-width {
   max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 }
 
 body:has(.section-header .drawer-menu) .announcement-bar-section .page-width {
@@ -2143,6 +2143,17 @@ input[type='checkbox'] {
     width: fit-content;
     margin: auto;
   }
+}
+
+.announcement-bar {
+  background-color: rgb(var(--color-background-contrast));
+  color: rgb(var(--color-foreground));
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+.announcement-bar__message {
+  margin: 0;
 }
 
 .announcement-bar,
