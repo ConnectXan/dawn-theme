@@ -593,3 +593,21 @@
     clip-path: polygon(var(--shape--blob-5));
   }
 }
+.product-card__image-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card__add-to-cart {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+
+.product-card-wrapper:hover .product-card__add-to-cart {
+  opacity: 1;
+}
