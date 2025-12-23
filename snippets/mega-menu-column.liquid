@@ -1,0 +1,19 @@
+{% comment %}
+  Renders a column for the mega menu.
+
+  Usage:
+  {% render 'mega-menu-column', link_list: block.settings.link_list %}
+{% endcomment %}
+
+{%- if link_list != blank -%}
+  <div class="mega-menu-column">
+    <h3 class="mega-menu-column__heading">{{ link_list.title }}</h3>
+    <ul class="mega-menu-column__list">
+      {%- for child_link in link_list.links -%}
+        <li>
+          <a href="{{ child_link.url }}" class="mega-menu-column__link">{{ child_link.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+{%- endif -%}
