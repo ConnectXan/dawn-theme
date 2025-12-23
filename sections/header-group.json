@@ -37,6 +37,25 @@
     },
     "header": {
       "type": "header",
+      "blocks": {
+        "mega_menu_RDF6Yi": {
+          "type": "mega_menu",
+          "settings": {
+            "menu_item": "",
+            "layout": "4_columns",
+            "link_list_1": "dresses",
+            "link_list_2": "dresses",
+            "link_list_3": "",
+            "link_list_4": "",
+            "image": "shopify://shop_images/i-want-it-for-hero-banner-and-keep-indian-models.png",
+            "image_heading": "s",
+            "image_link": "shopify://collections"
+          }
+        }
+      },
+      "block_order": [
+        "mega_menu_RDF6Yi"
+      ],
       "settings": {
         "logo_position": "middle-left",
         "mobile_logo_position": "center",
