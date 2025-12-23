@@ -431,6 +431,29 @@
   customElements.define('sticky-header', StickyHeader);
 {% endjavascript %}
 
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const megaMenus = document.querySelectorAll('.mega-menu');
+    const mediaQuery = window.matchMedia('(min-width: 990px)');
+
+    function handleHover(e) {
+      if (mediaQuery.matches) {
+        const details = e.currentTarget;
+        if (e.type === 'mouseenter') {
+          details.setAttribute('open', true);
+        } else {
+          details.removeAttribute('open');
+        }
+      }
+    }
+
+    megaMenus.forEach((menu) => {
+      menu.addEventListener('mouseenter', handleHover);
+      menu.addEventListener('mouseleave', handleHover);
+    });
+  });
+</script>
+
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -475,7 +498,6 @@
 {
   "name": "t:sections.header.name",
   "class": "section-header",
-  "max_blocks": 3,
   "settings": [
     {
       "type": "select",
@@ -671,6 +693,89 @@
     }
   ],
   "blocks": [
+    {
+      "type": "mega_menu",
+      "name": "t:sections.header.blocks.mega_menu.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_item",
+          "label": "t:sections.header.blocks.mega_menu.settings.menu_item.label",
+          "info": "t:sections.header.blocks.mega_menu.settings.menu_item.info"
+        },
+        {
+          "type": "select",
+          "id": "layout",
+          "label": "t:sections.header.blocks.mega_menu.settings.layout.label",
+          "options": [
+            {
+              "value": "4_columns",
+              "label": "t:sections.header.blocks.mega_menu.settings.layout.options__1.label"
+            },
+            {
+              "value": "3_columns_with_image",
+              "label": "t:sections.header.blocks.mega_menu.settings.layout.options__2.label"
+            }
+          ],
+          "default": "4_columns"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_column_1.content"
+        },
+        {
+          "type": "link_list",
+          "id": "link_list_1",
+          "label": "t:sections.header.blocks.mega_menu.settings.link_list.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_column_2.content"
+        },
+        {
+          "type": "link_list",
+          "id": "link_list_2",
+          "label": "t:sections.header.blocks.mega_menu.settings.link_list.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_column_3.content"
+        },
+        {
+          "type": "link_list",
+          "id": "link_list_3",
+          "label": "t:sections.header.blocks.mega_menu.settings.link_list.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_column_4.content"
+        },
+        {
+          "type": "link_list",
+          "id": "link_list_4",
+          "label": "t:sections.header.blocks.mega_menu.settings.link_list.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.header.blocks.mega_menu.settings.header_featured_image.content"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.header.blocks.mega_menu.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "image_heading",
+          "label": "t:sections.header.blocks.mega_menu.settings.image_heading.label"
+        },
+        {
+          "type": "url",
+          "id": "image_link",
+          "label": "t:sections.header.blocks.mega_menu.settings.image_link.label"
+        }
+      ]
+    },
     {
       "type": "@app"
     }

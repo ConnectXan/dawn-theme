@@ -281,6 +281,53 @@
       "cart_count": {
         "one": "{{ count }} item",
         "other": "{{ count }} items"
+      },
+      "blocks": {
+        "mega_menu": {
+          "name": "Mega Menu",
+          "settings": {
+            "menu_item": {
+              "label": "Menu Item",
+              "info": "The exact name of the top-level menu item that triggers this mega menu."
+            },
+            "layout": {
+              "label": "Layout",
+              "options__1": {
+                "label": "4 Columns"
+              },
+              "options__2": {
+                "label": "3 Columns with Image"
+              }
+            },
+            "header_column_1": {
+              "content": "Column 1"
+            },
+            "link_list": {
+              "label": "Link List"
+            },
+            "header_column_2": {
+              "content": "Column 2"
+            },
+            "header_column_3": {
+              "content": "Column 3"
+            },
+            "header_column_4": {
+              "content": "Column 4"
+            },
+            "header_featured_image": {
+              "content": "Featured Image"
+            },
+            "image": {
+              "label": "Image"
+            },
+            "image_heading": {
+              "label": "Image Heading"
+            },
+            "image_link": {
+              "label": "Image Link"
+            }
+          }
+        }
       }
     },
     "cart": {
